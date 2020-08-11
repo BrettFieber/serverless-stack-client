@@ -15,6 +15,7 @@ export default function Notes() {
   const [note, setNote] = useState(null);
   const [content, setContent] = useState('');
   const [isLoading, setIsLoading] = useState(false);
+  // eslint-disable-next-line no-unused-vars
   const [isDeleting, setIsDeleting] = useState(false);
 
   useEffect(() => {
