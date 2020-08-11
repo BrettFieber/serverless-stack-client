@@ -19,7 +19,7 @@ export default class ErrorBoundry extends React.Component {
         <h3>Sorry there was a problem loading this page</h3>
       </div>
     ) : (
-      this/this.props.children
+      this.props.children
     );
   }
 }
