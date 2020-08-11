@@ -7,6 +7,7 @@ import Routes from "./Routes";
 import { AppContext } from './libs/contextLib';
 import { Auth } from 'aws-amplify'
 import { onError } from './libs/errorLib';
+import ErrorBoundry from './components/ErrorBoundry';
 
 function App() {
   const history = useHistory();
@@ -70,9 +71,11 @@ function App() {
           </Nav>
         </Navbar.Collapse>
       </Navbar>
-      <AppContext.Provider value={{ isAuthenticated, userHasAuthenticated }}>
-        <Routes />
-      </AppContext.Provider>
+      <ErrorBoundry>
+        <AppContext.Provider value={{ isAuthenticated, userHasAuthenticated }}>
+          <Routes />
+        </AppContext.Provider>
+      </ErrorBoundry>
     </div>
   );
 }
